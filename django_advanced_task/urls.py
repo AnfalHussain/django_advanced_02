@@ -22,6 +22,11 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/', views.store_list, name='list'),
+    path('list/create', views.store_create, name='create'),
+    path('list/<slug:store_slug>', views.store_detail, name='detail'),
+
+
+
 ]
 
 urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
